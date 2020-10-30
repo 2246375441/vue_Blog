@@ -24,7 +24,30 @@
       </div>
     </div>
 
-    <div id="app"></div>
+    <div id="app">
+      <div class="app-left"><i class="el-icon-menu" @click="app_tk"></i></div>
+      <div class="app-right">老陈博客丶</div>
+      <div v-show='appBodyIS' id="appBody">
+        <div class="sh">
+          <el-button icon="el-icon-close" type="text" class="buttonX" @click="buttonX"></el-button>
+        </div>
+        <div>
+          <el-input
+          placeholder="请输入内容"
+          prefix-icon="el-icon-search"
+          v-model="searchValue"
+          class="app-search"
+          >
+          </el-input>
+        </div>
+        <div>
+          <div>博客首页丶</div>
+          <div>开发中</div>
+          <div>开发中</div>
+          <div>开发中</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,7 +58,9 @@ export default {
     return {
       // 搜搜看显示隐藏
       searchIS:false,
-      searchValue:''
+      searchValue:'',
+      // 移动框  弹框的显示与隐藏
+      appBodyIS:false
     }
   },
   methods:{
@@ -82,17 +107,41 @@ export default {
       }else{
         nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
       }
+    },
+
+
+
+    // 鼠标移到按钮 鼠标变成手
+    app_mou(){
+      document.querySelector('.el-icon-menu').style.cursor = "pointer";
+    },
+    // 弹框开启
+    app_tk(){
+      document.querySelector('#appBody').className ='appBodyKai'
+      this.appBodyIS = true
+    },
+    // 弹框关闭
+    buttonX(){
+      document.querySelector('#appBody').className ='appBodyGuan'
+      var that = this
+      setTimeout((function(){
+        that.appBodyIS = false
+      }),600)
     }
   },
   mounted(){
     // 给页面添加滚动事件
     window.addEventListener('scroll',this.handleScroll,true)
+    document.querySelector('.el-icon-menu').onmouseover = this.app_mou
   }
 }
 </script>
 
 <style scoped>
 @media screen and (min-width:900px){
+#app{
+  display: none;
+}
 .nav{
   position: fixed;
   z-index: 999;
@@ -145,8 +194,100 @@ export default {
 }
 
 @media screen and (max-width:900px){
+.nav{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 #pc{
   display: none;
+}
+#app{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app-left{
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+.app-left i{
+  font-size: 40px;
+  color: white;
+}
+.app-right{
+  font-size: 20px;
+  color: white;
+  margin-right: 20px;
+}
+.appBodyKai{
+  width: 96%;
+  height: 270px;
+  background-color: white;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  right: 2%;
+  border-radius: 10px;
+  animation: appBodyKai .6s ease;
+}
+@keyframes appBodyKai {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.appBodyGuan{
+  width: 96%;
+  height: 270px;
+  background-color: white;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  right: 2%;
+  border-radius: 10px;
+  animation: appBodyGuan .6s ease;
+}
+@keyframes appBodyGuan {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.app-search>>>.el-input__inner{
+  /* border: none; */
+  border-top: solid 1px #e4e4e5;
+  border-bottom:none ;
+  border-left:none ;
+  border-right:none ;
+  border-radius: 0;
+}
+.app-search>>>input::-webkit-input-placeholder {
+  /* placeholder颜色  */
+  color: #172b4e;
+}
+.app-search>>>i{
+  color: #172b4e;
+  font-weight: bold;
+}
+.buttonX{
+  font-size: 30px;
+  color: black;
+  margin-right: 10px;
+}
+.sh{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
 }
 }
 </style>
