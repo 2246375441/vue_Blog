@@ -102,12 +102,13 @@ export default {
       this.$bus.$emit('scrollTop',scrollTop)
       // console.log(bfb)
       var nav = document.getElementById('pc')
-      if (bfb >= 1) {
-        // nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
-
-      }else{
+      // console.log(bfb)
+      if (bfb <= 1) {
         nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
         nav.style.height = 90 - (bfb*20) + 'px'
+      }else{
+        nav.style.backgroundColor ='rgb(105,63,184,1)'
+        nav.style.height = '70px'
       }
     },
 

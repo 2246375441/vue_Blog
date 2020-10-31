@@ -34,7 +34,8 @@ export default {
         this.$bus.$on('scrollTop',item=>{
         // this.busBfb = item
         var bfb = item/400
-        if (bfb<=0) {
+        if (bfb>1) {
+          bgHeight.style.height = '0px'
         }else{
           bgHeight.style.height = (500*(1-bfb)) +'px'
           y1.style.top = 0 - item + 'px'
