@@ -24,10 +24,6 @@ export default {
 <style scoped>
 #home-wk{
   width: 100%;
-
-  background-image: url('../../assets/img/home/pc.jpg');
-  background-repeat:no-repeat;
-  background-size:100% 500px;
   display: flex;
   flex-direction: column;
   align-items: center;

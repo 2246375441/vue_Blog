@@ -40,7 +40,7 @@
           >
           </el-input>
         </div>
-        <div>
+        <div class="app_nav">
           <div>博客首页丶</div>
           <div>开发中</div>
           <div>开发中</div>
@@ -99,6 +99,7 @@ export default {
       var scrollTop = document.documentElement.scrollTop
       // console.log(scrollTop)
       var bfb = scrollTop/400
+      this.$bus.$emit('scrollTop',scrollTop)
       // console.log(bfb)
       var nav = document.getElementById('pc')
       if (bfb >= 1) {
@@ -106,6 +107,7 @@ export default {
 
       }else{
         nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
+        nav.style.height = 90 - (bfb*20) + 'px'
       }
     },
 
@@ -152,7 +154,7 @@ export default {
 #pc{
   display: block;
   width: 100%;
-  height: 80px;
+  height: 90px;
   /* background-color:rgb(105,63,184); */
 
   display: flex;
@@ -206,7 +208,7 @@ export default {
 }
 #app{
   width: 100%;
-  height: 80px;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -288,6 +290,17 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
+}
+.app_nav{
+  margin-left: 25px;
+  height: 60%;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.app_nav>>>div{
+  font-size: 18px;
 }
 }
 </style>
