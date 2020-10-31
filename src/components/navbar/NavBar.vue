@@ -1,7 +1,7 @@
 <template>
   <!-- 导航条高80px -->
   <div class="nav">
-    <!-- pc端使用 -->
+    <!-- pc端 -->
     <div id="pc">
       <!-- 导航栏左边 -->
       <div class="nav-left">
@@ -28,14 +28,19 @@
       </div>
     </div>
 
+    <!-- 移动端 -->
     <div id="app">
+      <!-- 左边按钮 -->
       <div class="app-left"><i class="el-icon-menu" @click="app_tk"></i></div>
+      <!-- 右边导航条 -->
       <div class="app-right">老陈博客丶</div>
+      <!-- 点击左边按钮 显示区域 -->
       <div v-show='appBodyIS' id="appBody">
         <div class="sh">
           <el-button icon="el-icon-close" type="text" class="buttonX" @click="buttonX"></el-button>
         </div>
         <div>
+          <!-- 搜索框 -->
           <el-input
           placeholder="请输入内容"
           prefix-icon="el-icon-search"
@@ -44,6 +49,7 @@
           >
           </el-input>
         </div>
+        <!-- 导航栏 -->
         <div class="app_nav">
           <div>博客首页丶</div>
           <div>开发中</div>
