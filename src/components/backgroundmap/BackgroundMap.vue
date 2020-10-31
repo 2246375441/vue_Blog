@@ -1,10 +1,13 @@
 <template>
+  <!-- 背景图 z-index:-999 高度400 -->
   <div class="back_Map">
+    <!-- 左边圆圈 -->
     <div class="yl">
       <div class="y1"></div>
       <div class="y2"></div>
       <div class="y3"></div>
     </div>
+    <!-- 右边圆圈 -->
     <div class="yr">
       <div class="y4"></div>
       <div class="y5"></div>
