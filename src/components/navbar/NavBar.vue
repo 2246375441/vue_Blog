@@ -66,15 +66,16 @@ export default {
   name:'NavBar',
   data() {
     return {
-      // 搜搜看显示隐藏
+      // 搜索框显示 或隐藏
       searchIS:false,
+      // 搜索框 绑定值
       searchValue:'',
-      // 移动框  弹框的显示与隐藏
+      // 移动端 点击按钮显示区域
       appBodyIS:false
     }
   },
   methods:{
-    // 控制搜索框按钮方法
+    // 控制搜索框按钮隐藏
     searchISClick(){
       var input = document.getElementById('searchID')
       var wit = 0
@@ -104,7 +105,7 @@ export default {
         }
       },10)
     },
-    // 滚动事件 触发导航条变色 
+    // 滚动事件 触发导航条变色 且 宽度变化
     handleScroll(e){
       var scrollTop = document.documentElement.scrollTop
       // console.log(scrollTop)
@@ -121,19 +122,16 @@ export default {
         nav.style.height = '70px'
       }
     },
-
-
-
     // 鼠标移到按钮 鼠标变成手
     app_mou(){
       document.querySelector('.el-icon-menu').style.cursor = "pointer";
     },
-    // 弹框开启
+    // 移动端 点击按钮 显示区域
     app_tk(){
       document.querySelector('#appBody').className ='appBodyKai'
       this.appBodyIS = true
     },
-    // 弹框关闭
+    // 移动端 显示区域 X关闭按钮
     buttonX(){
       document.querySelector('#appBody').className ='appBodyGuan'
       var that = this
@@ -145,12 +143,14 @@ export default {
   mounted(){
     // 给页面添加滚动事件
     window.addEventListener('scroll',this.handleScroll,true)
+    // 给页面添加 鼠标变化
     document.querySelector('.el-icon-menu').onmouseover = this.app_mou
   }
 }
 </script>
 
 <style scoped>
+/* PC端 */
 @media screen and (min-width:900px){
 #app{
   display: none;
@@ -206,6 +206,7 @@ export default {
 
 }
 
+/* 移动端且witdh小于900px呈现 */
 @media screen and (max-width:900px){
 .nav{
   position: fixed;
@@ -276,6 +277,7 @@ export default {
     opacity: 0;
   }
 }
+/* 控制element框架中 输入框颜色 */
 .app-search>>>.el-input__inner{
   /* border: none; */
   border-top: solid 1px #e4e4e5;
