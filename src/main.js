@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI);
 
-Vue.prototype.$bus = Bus
+Vue.prototype.$bus = Bus  //将事件总线bus挂载到vue原型对象上
 
 new Vue({
   router,
