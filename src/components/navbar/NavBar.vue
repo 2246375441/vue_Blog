@@ -3,13 +3,17 @@
   <div class="nav">
     <!-- pc端使用 -->
     <div id="pc">
+      <!-- 导航栏左边 -->
       <div class="nav-left">
+        <!-- 导航条 -->
         <div class="nav-left-0 bold">博客首页丶</div>
         <div class="nav-left-0">开发中.</div>
         <div class="nav-left-0">开发中.</div>
         <div class="nav-left-0">开发中.</div>
       </div>
+      <!-- 导航栏右边 -->
       <div class="nav-right">
+        <!-- 搜索框+搜索图标 -->
         <el-input
           placeholder="请输入内容"
           prefix-icon="el-icon-search"
@@ -19,7 +23,7 @@
           id="searchID"
           >
         </el-input>
-
+        <!-- 搜索图标  -->
         <el-button type="text" icon="el-icon-search" @click="searchISClick"></el-button>
       </div>
     </div>
