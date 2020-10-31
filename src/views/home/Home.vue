@@ -37,7 +37,6 @@ export default {
 }
 .gggg{
   height: 10000px;
-  /* background-color: red; */
   width: 100%;
 }
 </style>
