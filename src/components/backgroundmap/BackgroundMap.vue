@@ -72,7 +72,6 @@ export default {
   background: linear-gradient(to top left, #b588e6,#281483);
   display: flex;
 
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .yl{
