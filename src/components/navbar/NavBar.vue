@@ -29,7 +29,7 @@
     </div>
 
     <!-- 移动端 -->
-    <div id="app">
+    <div id="app" class="app-nav">
       <!-- 左边按钮 -->
       <div class="app-left"><i class="el-icon-menu" @click="app_tk"></i></div>
       <!-- 右边导航条 -->
@@ -113,13 +113,18 @@ export default {
       this.$bus.$emit('scrollTop',scrollTop)
       // console.log(bfb)
       var nav = document.getElementById('pc')
+      var app_nav = document.getElementsByClassName('app-nav')[0]
       // console.log(bfb)
       if (bfb <= 1) {
         nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
+        app_nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
         nav.style.height = 90 - (bfb*20) + 'px'
+        app_nav.style.height = 90 - (bfb*20) + 'px'
       }else{
         nav.style.backgroundColor ='rgb(105,63,184,1)'
+        app_nav.style.backgroundColor ='rgb(105,63,184,1)'
         nav.style.height = '70px'
+        app_nav.style.height = '70px'
       }
     },
     // 鼠标移到按钮 鼠标变成手
@@ -143,6 +148,7 @@ export default {
   mounted(){
     // 给页面添加滚动事件
     window.addEventListener('scroll',this.handleScroll,true)
+    window.onmousewheel = document.onmousewheel = this.handleScroll
     // 给页面添加 鼠标变化
     document.querySelector('.el-icon-menu').onmouseover = this.app_mou
   }
