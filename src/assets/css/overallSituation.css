@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    -webkit-overflow-scrolling: touch;
 }
 
 ol, ul {
@@ -47,3 +48,4 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
