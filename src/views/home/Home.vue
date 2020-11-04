@@ -4,7 +4,7 @@
     <!-- 内容区域 -->
     <section>
       <!-- 左边内容 300px+right50px 1000px-->
-      <div class="home_left">
+      <div class="home_left" >
         <!-- 左边小搜索框 -->
         <left-search-box></left-search-box>
       </div>
@@ -45,7 +45,7 @@ export default {
   color: #fff;
   font-weight: bold;
   margin-top: 150px;
-  margin-bottom: 130px;
+  margin-bottom: 80px;
 }
 
 
@@ -62,7 +62,8 @@ section{
   margin-left: 25px;
   width: 240px;
   height: 1000px;
-  background-color: red;
+  /* background-color: red; */
+  position: relative;
 }
 
 .home_right{
@@ -70,6 +71,6 @@ section{
   margin-right: 25px;
   width: 70%;
   height: 1000px;
-  background-color: blue;
+  /* background-color: blue; */
 }
 </style>

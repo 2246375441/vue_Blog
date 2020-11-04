@@ -4,7 +4,7 @@
       老陈博客丶
     </div>
     <div class="searchInput">
-      <search-box-an></search-box-an>
+      <search-box-an class="search-box-a"></search-box-an>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   },
   methods:{
     handleScroll(){
-      console.log('22')
+      
     }
   },
   components:{
@@ -32,7 +32,7 @@ export default {
   width: 100%;
   height: 160px;
   border-radius: 30px;
-  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important
+  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
 }
 .searchNav{
   width: 100%;
@@ -54,5 +54,12 @@ export default {
   height: 50%;
   background-color: #ffffff;
   border-radius: 0 0 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box-a{
+  width: 80%!important;
 }
 </style>
