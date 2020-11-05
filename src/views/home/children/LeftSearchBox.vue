@@ -28,7 +28,6 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (min-width:900px){
 .searchBox{
   width: 100%;
   height: 160px;
@@ -62,14 +61,7 @@ export default {
 .search-box-a{
   width: 80%!important;
 }
-}
 
-@media screen and (max-width:900px){
-  .searchNav,.searchInput{
-    display: none;
-  }
-
-}
 
 
 </style>
