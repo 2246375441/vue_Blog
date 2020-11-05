@@ -28,10 +28,10 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (min-width:900px){
 .searchBox{
   width: 100%;
   height: 160px;
-  border-radius: 30px;
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
 }
 .searchNav{
@@ -41,7 +41,7 @@ export default {
   background: -webkit-linear-gradient(to right, #a887e6 , #643ab2); 
   background: -o-linear-gradient(to right, #a887e6, #643ab2); 
   background: -moz-linear-gradient(to right, #a887e6, #643ab2); 
-  border-radius: 30px 30px 0 0;
+  border-radius: 20px 20px 0 0;
 
   font-size: 20px;
   color: white;
@@ -53,7 +53,7 @@ export default {
   width: 100%;
   height: 50%;
   background-color: #ffffff;
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,4 +62,14 @@ export default {
 .search-box-a{
   width: 80%!important;
 }
+}
+
+@media screen and (max-width:900px){
+  .searchNav,.searchInput{
+    display: none;
+  }
+
+}
+
+
 </style>

@@ -116,13 +116,13 @@ export default {
       var app_nav = document.getElementsByClassName('app-nav')[0]
       // console.log(bfb)
       if (bfb <= 1) {
-        nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
-        app_nav.style.backgroundColor ='rgb(105,63,184,'+bfb+')'
+        nav.style.backgroundColor ='rgb(116, 134, 231,'+bfb+')'
+        app_nav.style.backgroundColor ='rgb(116, 134, 231,'+bfb+')'
         nav.style.height = 90 - (bfb*20) + 'px'
         app_nav.style.height = 90 - (bfb*20) + 'px'
       }else{
-        nav.style.backgroundColor ='rgb(105,63,184,1)'
-        app_nav.style.backgroundColor ='rgb(105,63,184,1)'
+        nav.style.backgroundColor ='rgb(116, 134, 231,1)'
+        app_nav.style.backgroundColor ='rgb(116, 134, 231,1)'
         nav.style.height = '70px'
         app_nav.style.height = '70px'
       }
