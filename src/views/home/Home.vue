@@ -11,7 +11,9 @@
         <left-site></left-site>
       </div>
       <!-- 右边内容 100% 1000px-->
-      <div class="home_right"></div>
+      <div class="home_right">
+        
+      </div>
     </section>
   </div>
 </template>
@@ -48,8 +50,6 @@ export default {
     width:95%!important;
   }
 }
-
-
 
 #home-wk{
   width: 100%;

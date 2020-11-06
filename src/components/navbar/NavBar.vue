@@ -108,13 +108,10 @@ export default {
     // 滚动事件 触发导航条变色 且 宽度变化
     handleScroll(e){
       var scrollTop = document.documentElement.scrollTop
-      // console.log(scrollTop)
       var bfb = scrollTop/400
       this.$bus.$emit('scrollTop',scrollTop)
-      // console.log(bfb)
       var nav = document.getElementById('pc')
       var app_nav = document.getElementsByClassName('app-nav')[0]
-      // console.log(bfb)
       if (bfb <= 1) {
         nav.style.backgroundColor ='rgb(116, 134, 231,'+bfb+')'
         app_nav.style.backgroundColor ='rgb(116, 134, 231,'+bfb+')'
