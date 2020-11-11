@@ -12,7 +12,7 @@
       </div>
       <!-- 右边内容 100% 1000px-->
       <div class="home_right">
-        
+        <right-item></right-item>
       </div>
     </section>
   </div>
@@ -21,6 +21,7 @@
 <script>
 import LeftSearchBox from './children/LeftSearchBox'
 import leftSite from './children/leftSite'
+import rightItem from './children/rightItem'
 export default {
   data() {
     return {
@@ -34,7 +35,9 @@ export default {
     //  左边小搜索框
     LeftSearchBox,
     //  左边站点框
-    leftSite
+    leftSite,
+    // 右边内容快
+    rightItem
   },
   
 }
@@ -84,9 +87,9 @@ section{
 }
 
 .home_right{
-  margin-left: 15px;
-  width: calc(100% - 240px - 12%);
+  margin-left: 30px;
+  width: calc(100% - 240px - 15%);
   height: 1000px;
-  background-color: blue;
+  /* background-color: blue; */
 }
 </style>

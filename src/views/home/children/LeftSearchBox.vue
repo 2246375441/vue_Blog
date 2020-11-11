@@ -23,6 +23,9 @@ export default {
   },
   components:{
     SearchBoxAn
+  },
+  computed:{
+    
   }
 }
 </script>
