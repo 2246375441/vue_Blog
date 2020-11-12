@@ -22,6 +22,18 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (min-width:900px){
+
+}
+@media screen and (max-width:900px){
+.item-nav{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.item-title:hover{
+  font-size: 26px!important;
+}
+}
 .Item{
   width: 100%;
   /* height: 300px; */
@@ -34,6 +46,8 @@ export default {
 
   padding: 30px;
   box-sizing: border-box;
+
+  margin-bottom: 50px;
 }
 
 .item-title{

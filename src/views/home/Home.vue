@@ -1,6 +1,8 @@
 <template>
   <div id="home-wk">
-    <div class="logo">博客首页欢迎你</div>
+    <div class="logo">
+      <top-logo></top-logo>
+    </div>
     <!-- 内容区域 -->
     <section>
       <!-- 左边内容 300px+right50px 1000px-->
@@ -13,6 +15,16 @@
       <!-- 右边内容 100% 1000px-->
       <div class="home_right">
         <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+        <right-item></right-item>
+
       </div>
     </section>
   </div>
@@ -22,6 +34,7 @@
 import LeftSearchBox from './children/LeftSearchBox'
 import leftSite from './children/leftSite'
 import rightItem from './children/rightItem'
+import topLogo from './children/topLogo'
 export default {
   data() {
     return {
@@ -37,7 +50,9 @@ export default {
     //  左边站点框
     leftSite,
     // 右边内容快
-    rightItem
+    rightItem,
+    // 顶部logo
+    topLogo
   },
   
 }
@@ -50,7 +65,8 @@ export default {
     display: none;
   }
   .home_right{
-    width:95%!important;
+    width:90%!important;
+    margin-left:0!important;
   }
 }
 
@@ -61,11 +77,11 @@ export default {
   align-items: center;
 }
 .logo{
-  font-size: 30px;
-  color: #fff;
-  font-weight: bold;
   margin-top: 150px;
   margin-bottom: 80px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 }
 
 

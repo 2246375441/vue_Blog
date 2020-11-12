@@ -24,7 +24,7 @@
           >
         </el-input>
         <!-- 搜索图标  -->
-        <el-button type="text" icon="el-icon-search" @click="searchISClick"></el-button>
+        <el-button type="text" icon="el-icon-search" @click="searchISClick" id="searchBtn"></el-button>
       </div>
     </div>
 
@@ -78,8 +78,11 @@ export default {
     // 控制搜索框按钮隐藏
     searchISClick(){
       var input = document.getElementById('searchID')
+      var btn = document.getElementById('searchBtn')
       var wit = 0
       input.style.visibility = 'visible'
+      btn.style.visibility = 'hidden'
+
       var time = setInterval(function(){
         if (wit >= 220) {
           clearInterval(time)
@@ -91,7 +94,9 @@ export default {
     },
     // 失去焦点关闭搜索框
     searchBlur(){
-      var input = document.getElementById('searchID')
+      var input = document.getElementById('searchID')      
+      var btn = document.getElementById('searchBtn')
+
       var wit = input.style.width
       wit = wit.substring(0,wit.length-2)
 
@@ -99,6 +104,7 @@ export default {
         if (wit == 0) {
           clearInterval(time)
           input.style.visibility = 'hidden'
+          btn.style.visibility = 'visible'
         }else{
           wit = wit - 10
           input.style.width = wit+'px'
@@ -205,6 +211,18 @@ export default {
 .el-input{
   width: 0px;
   visibility: hidden;
+}
+
+
+.nav-right >>>.el-input--prefix .el-input__inner{
+  padding-left: 0;
+}
+.nav-right >>>.el-input__inner{
+  padding: 0;
+}
+
+.nav-right >>>.el-button{
+  font-size: 30px;
 }
 
 }
