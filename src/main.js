@@ -6,6 +6,7 @@ import ElementUI from 'element-ui';
 import Bus from './components/bus/bus'
 
 import './assets/css/overallSituation.css' //导入全局默认css
+import './assets/css/root.css' //设置全局颜色--xx  var(--xx)
 import 'element-ui/lib/theme-chalk/index.css'; //导入element的css
 import './assets/js/element.js'                //导入element的全部组件
 

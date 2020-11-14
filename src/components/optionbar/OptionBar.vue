@@ -1,11 +1,15 @@
 <template>
   <div class="OptionBar">
     <op-position @LRclick="LRclick"></op-position>
+    <op-option :op_LR="op_LR"></op-option>
+    <op-body></op-body>
   </div>
 </template>
 
 <script>
 import opPosition from './children/opPosition'
+import opOption from './children/opOption'
+import opBody from './children/opBody'
 export default {
   name:"OptionBar",
   data() {
@@ -15,7 +19,9 @@ export default {
     }
   },
   components:{
-    opPosition
+    opPosition,
+    opOption,
+    opBody
   },
   created() {
     this.DefaultSettings()
@@ -49,7 +55,6 @@ export default {
     },
     LRclick(){
       this.DefaultSettingsDom()
-      // console.log('发送')
     }
   },
 }
