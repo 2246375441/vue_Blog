@@ -56,6 +56,8 @@ export default {
     // 给页面添加滚动事件
     window.addEventListener('scroll',this.handleScroll,true)
   },
+  watch: {
+  },
 }
 </script>
 
@@ -69,7 +71,7 @@ export default {
   left: 0;
   right: 0;
   
-  background: linear-gradient(to top left, #b588e6,#281483);
+  background: linear-gradient(to top left,var(--nightjb1),var(--nightjb2));
   display: flex;
 
   -webkit-overflow-scrolling: touch;
@@ -102,7 +104,7 @@ export default {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: #816dd4;
+  background-color: rgb(129, 109, 212);
   opacity: 0.4;
   top: 100px;
   left: 40px;

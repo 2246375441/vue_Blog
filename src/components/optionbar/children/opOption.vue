@@ -16,6 +16,22 @@
 
     <div class="op_OPK" v-show="OPK_IS">
       
+      <div class="op_OPK_mode">
+        <div>夜间模式{{nightMode_Value}}</div>
+        <el-switch
+          v-model="nightMode_Value"
+          active-color="#1a78c2"
+          inactive-color="#dddddd"
+          :width="50"
+          @change="mode_change">
+        </el-switch>
+      </div>
+
+      <div class="op_OPK_font">字体</div>
+
+      <div class="op_OPK_borr">圆角</div>
+
+      <div class="op_OPK_bodyColor">主题色</div>
     </div>
   </div>
 </template>
@@ -27,8 +43,8 @@ export default {
     return {
       // 设置框显示或隐藏
       OPK_IS:false,
-      // 按钮处于左边还是右边
-      // op_LR:'left',
+      // 夜间模式是否开启
+      nightMode_Value:false
     }
   },
   props:{
@@ -42,11 +58,21 @@ export default {
       // console.log(val)
       // console.log(oldVal)
       this.watch_op_LR(val)
+    },
+    'nightMode_Value'(val,oldVal){
+      this.watch_nightMode_Value()
     }
+  },
+  created() {
+    
   },
   mounted() {
     // 默认初始化显示框位置
     this.watch_op_LR(this.op_LR)
+    // 默认初始化是否夜间模式
+    this.nightMode_Value = localStorage.op_nightMode=="false"?false:true;
+    this.watch_nightMode_Value()
+    
   },
   methods:{
     // 点击设置框的显示与隐藏
@@ -65,6 +91,33 @@ export default {
         op_OPK.style.left = "-320px"
         // console.log(this.op_LR)
       }
+    },
+    // 夜间模式判断 
+    mode_change(){
+      localStorage.op_nightMode = this.nightMode_Value
+    },
+    // 夜间模式初始化css
+    watch_nightMode_Value(){
+      var root = document.querySelector(':root')
+      if (this.nightMode_Value===true ||this.nightMode_Value==="true") {
+        // 黑夜模式启动
+        root.setAttribute('style',`
+        --nightMode1:rgb(26, 26, 26);
+        --nightMode2:rgb(54, 54, 54);
+        --nightMode3:rgb(255,255,255);
+        --nightjb1:rgb(26, 26, 26);
+        --nightjb2:rgb(26,26,26);
+        `) 
+      }else{
+        // 关闭黑夜模式
+        root.setAttribute('style',`
+        --nightMode1:rgb(255, 255, 255);
+        --nightMode2:rgb(255, 255, 255);
+        --nightMode3:rgb(0,0,0);
+        --nightjb1:rgb(181, 136, 230);
+        --nightjb2:rgb(40, 20, 131);
+        `)
+      }
     }
   }
 }
@@ -74,6 +127,7 @@ export default {
 #op_OP{
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
   margin: 10px 0;
+  
 }
 #op_OP >>>.el-icon-s-tools{
   color:#5e72e4;
@@ -93,10 +147,14 @@ export default {
   bottom: 10px;
   border-radius:var(--borderRadius);
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
-  background-color: #fff;
+  background-color:var(--nightMode2);
   animation: op_OPKDH 0.4s ease;
   opacity: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
 
+  color: var(--nightMode3);
 }
 
 @keyframes op_OPKDH{
@@ -106,5 +164,10 @@ export default {
   100%{
     opacity: 1;
   }
+}
+
+.op_OPK_mode{
+  display: flex;
+  justify-content: space-between;
 }
 </style>

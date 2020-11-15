@@ -1,3 +1,11 @@
 :root{
+  /* 全局圆角值 */
   --borderRadius:0px;
+  /* 夜间模式颜色 */
+  --nightMode1:rgb(26, 26, 26);  /*  rgb(255, 255, 255) */
+  --nightMode2:rgb(54, 54, 54);  /*  rgb(255, 255, 255) */
+  --nightMode3:rgb(255,255,255);  /*  rgb(0,0,0) */
+
+  --nightjb1:rgb(26, 26, 26);
+  --nightjb2:rgb(54, 54, 54);
 }
