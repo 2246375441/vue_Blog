@@ -20,7 +20,8 @@
 export default {
   data() {
     return {
-      busBfb:0
+      busBfb:0,
+
     }
   },
   methods:{
@@ -55,8 +56,34 @@ export default {
   mounted(){
     // 给页面添加滚动事件
     window.addEventListener('scroll',this.handleScroll,true)
+
+    this.$bus.$on('nightMode',(res)=>{
+      console.log(`rrrrr`,res)
+      var y1 = document.querySelector('.y1')
+      var y2 = document.querySelector('.y2')
+      var y3 = document.querySelector('.y3')
+      var y4 = document.querySelector('.y4')
+      var y5 = document.querySelector('.y5')
+      var y6 = document.querySelector('.y6')
+      if (res==true) {
+        y1.style.backgroundColor = '#1a1a1a'
+        y2.style.backgroundColor = '#1a1a1a'
+        y3.style.backgroundColor = '#1a1a1a'
+        y4.style.backgroundColor = '#1a1a1a'
+        y5.style.backgroundColor = '#1a1a1a'
+        y6.style.backgroundColor = '#1a1a1a'
+      }else{
+        y1.style.backgroundColor = '#422ba8'
+        y2.style.backgroundColor = '#816dd4'
+        y3.style.backgroundColor = '#816dd4'
+        y4.style.backgroundColor = '#816dd4'
+        y5.style.backgroundColor = '#7661c9'
+        y6.style.backgroundColor = '#7661c9'
+      }
+    })
   },
   watch: {
+    
   },
 }
 </script>
@@ -104,7 +131,7 @@ export default {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: rgb(129, 109, 212);
+  background-color: #816dd4;
   opacity: 0.4;
   top: 100px;
   left: 40px;

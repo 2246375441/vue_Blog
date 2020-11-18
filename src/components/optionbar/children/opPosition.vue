@@ -35,15 +35,15 @@
 export default {
   name: "opPosition",
   mounted() {
-    console.log(localStorage.getItem("op_LR"));
+    // console.log(localStorage.getItem("op_LR"));
     if (localStorage.getItem("op_LR") === "left") {
       document.querySelector("#op_LR_left").style.display = "none";
       document.querySelector("#op_LR_right").style.display = "inline-block";
-      console.log("left");
+      // console.log("left");
     } else {
       document.querySelector("#op_LR_left").style.display = "inline-block";
       document.querySelector("#op_LR_right").style.display = "none";
-      console.log("right");
+      // console.log("right");
     }
   },
   methods: {

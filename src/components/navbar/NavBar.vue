@@ -91,6 +91,9 @@ export default {
           input.style.width = wit+'px'
         }
       },10)
+
+      
+      this.$refs.searchRef.focus()
     },
     // 失去焦点关闭搜索框
     searchBlur(){
@@ -189,7 +192,7 @@ export default {
   display: flex;
 
   font-size: 14px;
-  color: #fff;
+  color: var(--nightFont);
 }
 .nav-left-0{
   margin: auto 20px auto 20px;
@@ -224,6 +227,11 @@ export default {
 .nav-right >>>.el-button{
   font-size: 30px;
 }
+
+.nav-right >>>.el-icon-search{
+  color:var(--nightFont);
+}
+
 
 }
 

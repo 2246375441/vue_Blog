@@ -88,9 +88,10 @@ export default {
 
 section{
   width: 100%;
-  height: 10000px;
+  height: 100%;
   display: flex;
   justify-content:center;
+  /* background-color: var(--nightMode2); */
 }
 
 .home_left{
@@ -105,7 +106,7 @@ section{
 .home_right{
   margin-left: 30px;
   width: calc(100% - 240px - 15%);
-  height: 1000px;
+  height: 100%;
   /* background-color: blue; */
 }
 </style>

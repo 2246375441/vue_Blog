@@ -34,7 +34,7 @@ export default {
   methods: {
     // 初始化获取盒子 数据 比如左右 圆角
     DefaultSettings(){
-      console.log(localStorage)
+      // console.log(localStorage)
       if(localStorage.getItem('op_LR')==null){localStorage.setItem('op_LR','left')}
       if(localStorage.getItem('op_radius')==null){localStorage.setItem('op_radius','20px')}
       if(localStorage.getItem('op_nightMode')==null){localStorage.setItem('op_nightMode','false')}
@@ -42,6 +42,7 @@ export default {
 
       this.op_LR = localStorage.getItem('op_LR')
       this.op_radius = localStorage.getItem('op_radius')
+
 
     },
     // 虚拟Dom处理
@@ -55,6 +56,7 @@ export default {
         OptionBar.style.left = ""
         OptionBar.style.right = 0
       }
+
     },
     LRclick(){
       this.DefaultSettingsDom()

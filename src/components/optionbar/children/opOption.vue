@@ -107,6 +107,7 @@ export default {
         --nightMode3:rgb(255,255,255);
         --nightjb1:rgb(26, 26, 26);
         --nightjb2:rgb(26,26,26);
+        --nightFont:rgb(184, 184, 184);
         `) 
       }else{
         // 关闭黑夜模式
@@ -116,8 +117,11 @@ export default {
         --nightMode3:rgb(0,0,0);
         --nightjb1:rgb(181, 136, 230);
         --nightjb2:rgb(40, 20, 131);
+        --nightFont:rgb(255,255,255);
         `)
       }
+
+      this.$bus.$emit('nightMode',this.nightMode_Value)
     }
   }
 }
