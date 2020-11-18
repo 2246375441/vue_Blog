@@ -17,7 +17,15 @@ export default {
     NavBar,
     BackgroundMap,
     OptionBar
-  }
+  },
+  data () {
+    return {
+     
+    }
+  },
+  mounted() {
+    
+  },
 }
 </script>
 

@@ -61,6 +61,7 @@ export default {
 <style scoped>
 @media screen and (min-width:900px){}
 @media screen and (max-width:900px){
+
   .home_left{
     display: none;
   }

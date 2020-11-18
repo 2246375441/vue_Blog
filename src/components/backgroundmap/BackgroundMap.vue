@@ -58,7 +58,7 @@ export default {
     window.addEventListener('scroll',this.handleScroll,true)
 
     this.$bus.$on('nightMode',(res)=>{
-      console.log(`rrrrr`,res)
+      // console.log(`rrrrr`,res)
       var y1 = document.querySelector('.y1')
       var y2 = document.querySelector('.y2')
       var y3 = document.querySelector('.y3')

@@ -108,6 +108,14 @@ export default {
         --nightjb1:rgb(26, 26, 26);
         --nightjb2:rgb(26,26,26);
         --nightFont:rgb(184, 184, 184);
+        --nightjbser1:rgb(42, 42, 42); 
+        --nightjbser2:rgb(42, 42, 42); 
+        --nightText1:rgb(42, 42, 42);
+        --nightText2:rgb(53, 53, 53);
+        --nightText3:rgb(68, 68, 68);
+        --nightText4:rgb(190, 190, 190);
+        --nightLeftSite:rgb(53, 53, 53);
+        --nightLeftSite2:rgb(190, 190, 190);
         `) 
       }else{
         // 关闭黑夜模式
@@ -118,6 +126,14 @@ export default {
         --nightjb1:rgb(181, 136, 230);
         --nightjb2:rgb(40, 20, 131);
         --nightFont:rgb(255,255,255);
+        --nightjbser1:rgb(181, 136, 230); 
+        --nightjbser2:rgb(100, 58, 178); 
+        --nightText1:rgb(255,255,255);
+        --nightText2:rgb(255,255,255);
+        --nightText3:rgb(214, 218, 226);
+        --nightText4:rgb(0, 0, 0);
+        --nightLeftSite:rgb(255,255,255);
+        --nightLeftSite2:rgb(111, 84, 186);
         `)
       }
 

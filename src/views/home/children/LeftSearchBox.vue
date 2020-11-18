@@ -39,10 +39,11 @@ export default {
 .searchNav{
   width: 100%;
   height: 50%;
-  background: linear-gradient(to right, #a887e6 , #643ab2); 
-  background: -webkit-linear-gradient(to right, #a887e6 , #643ab2); 
-  background: -o-linear-gradient(to right, #a887e6, #643ab2); 
-  background: -moz-linear-gradient(to right, #a887e6, #643ab2); 
+  background-color: rgb(100, 58, 178);
+  background: -webkit-linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
+  background: -o-linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
+  background: -moz-linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
+  background: linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
   border-radius: 20px 20px 0 0;
 
   font-size: 20px;
@@ -54,11 +55,20 @@ export default {
 .searchInput{
   width: 100%;
   height: 50%;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border-radius: 0 0 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: var(--nightText2);
+}
+.searchInput>>>.el-button--primary{
+  background-color: var(--nightText3);
+  color:var(--nightText4);
+}
+.searchInput>>>.el-input__inner{
+  background-color:var(--nightText2);
 }
 
 .search-box-a{

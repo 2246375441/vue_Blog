@@ -43,7 +43,7 @@
             </div> -->
 
             <div class="content_right_wx">
-              <div class="content_right_class_title">联系老陈！</div>
+              <div class="content_right_class_title"><a href="">联系老陈！</a></div>
               <img src="../../../assets/img/wx.jpg" alt="">
             </div>
 
@@ -198,12 +198,14 @@ export default {
 <style scoped>
 a{
   text-decoration:none;
+  color:var(--nightLeftSite2)  !important;
 }
 
 .pc1{
   width: 100%;
   height: 450px;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-color: var(--nightLeftSite);
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
   border-radius: 20px;
   margin-top: 10px;
@@ -211,7 +213,8 @@ a{
 .pc2{
   width: 100%;
   height: 450px;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
+  background-color: var(--nightLeftSite);
   box-shadow: 0 15px 35px rgba(50,50,93,.2),0 5px 15px rgba(0,0,0,.2)!important;
   border-radius: 20px;
   position: fixed;
@@ -257,6 +260,7 @@ a{
   height: auto;
   /* background-color: red; */
   animation: contentDH 1s ease;
+  color: var(--nightText4);
 }
 .content_right{
   width: 100%;
@@ -329,13 +333,16 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 .content_left_a div{
   margin-bottom: 20px;
   font-size: 16px;
-  color:#6f54ba;
-  border-bottom: solid 1px #6f54ba;
+  /* color:#6f54ba; */
+  border-bottom: solid 1px var(--nightLeftSite2);
   padding-bottom: 5px;
+
+    color: var(--nightLeftSite2) !important;
 }
 
 

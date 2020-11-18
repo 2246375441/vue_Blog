@@ -37,7 +37,7 @@ export default {
 .Item{
   width: 100%;
   /* height: 300px; */
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
   border-radius: 20px;
   display: flex;
@@ -48,6 +48,8 @@ export default {
   box-sizing: border-box;
 
   margin-bottom: 50px;
+
+  background-color: var(--nightText2);
 }
 
 .item-title{
@@ -81,5 +83,6 @@ export default {
   margin-top: 5px;
   margin-bottom: 10px;
   line-height: 30px;
+  color: var(--nightText4);
 }
 </style>
