@@ -1,19 +1,21 @@
 <template>
   <div id="home-wk">
     <div class="logo">
+      <!-- 页面logo(老陈博客欢迎你) -->
       <top-logo></top-logo>
     </div>
     <!-- 内容区域 -->
     <section>
-      <!-- 左边内容 300px+right50px 1000px-->
+      <!-- 左边内容 content240 + margin-left15-->
       <div class="home_left" >
         <!-- 左边小搜索框 -->
         <left-search-box></left-search-box>
         <!-- 左边站点概念框 -->
         <left-site></left-site>
       </div>
-      <!-- 右边内容 100% 1000px-->
+      <!-- 右边区域内容 100% 1000px-->
       <div class="home_right">
+        <!-- 文章 -->
         <right-item></right-item>
         <right-item></right-item>
         <right-item></right-item>
@@ -59,9 +61,12 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (min-width:900px){}
-@media screen and (max-width:900px){
+@media screen and (min-width:900px){
+  /* 宽度大于900 */
+}
 
+@media screen and (max-width:900px){ 
+  /* 宽度小于900 */
   .home_left{
     display: none;
   }

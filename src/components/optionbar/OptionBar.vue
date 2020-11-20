@@ -1,7 +1,11 @@
 <template>
+  <!-- 右下角设置按钮 App-->
   <div class="OptionBar">
+    <!-- 第一个按钮 按钮位置 -->
     <op-position @LRclick="LRclick"></op-position>
+    <!-- 第二个按钮 设置框 -->
     <op-option :op_LR="op_LR"></op-option>
+    <!-- 第三个按钮 已阅读区域 -->
     <op-body></op-body>
   </div>
 </template>

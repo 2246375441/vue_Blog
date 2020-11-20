@@ -50,6 +50,9 @@ export default {
   margin-bottom: 50px;
 
   background-color: var(--nightText2);
+
+  position: relative;
+  
 }
 
 .item-title{

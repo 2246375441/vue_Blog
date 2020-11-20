@@ -1,4 +1,5 @@
 <template>
+  <!-- 搜索框自带特效  -->
   <!-- w 100%  h 35px -->
   <div class="boxWk">
     <div class="box_but" @click="btnClick"><el-button type="primary" icon="el-icon-search" class="box">搜索</el-button></div>    

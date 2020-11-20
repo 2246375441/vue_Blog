@@ -54,11 +54,13 @@ export default {
     }
   },
   watch: {
+    // 监听设置框位置
     'op_LR'(val,oldVal){
       // console.log(val)
       // console.log(oldVal)
       this.watch_op_LR(val)
     },
+    // 监听是否启动了黑夜模式
     'nightMode_Value'(val,oldVal){
       this.watch_nightMode_Value()
     }

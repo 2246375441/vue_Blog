@@ -1,5 +1,5 @@
 <template>
-  <!-- 背景图 z-index:-999 高度400 -->
+  <!-- 背景图 App -->
   <div class="back_Map">
     <!-- 左边圆圈 -->
     <div class="yl">
@@ -93,7 +93,7 @@ export default {
   width: 100%;
   height: 500px;
   position: fixed;
-  z-index: -999;
+  /* z-index: -999; */
   top: 0;
   left: 0;
   right: 0;
