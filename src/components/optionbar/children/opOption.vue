@@ -17,7 +17,7 @@
     <div class="op_OPK" v-show="OPK_IS">
       
       <div class="op_OPK_mode">
-        <div>夜间模式{{nightMode_Value}}</div>
+        <div>夜间模式</div>
         <el-switch
           v-model="nightMode_Value"
           active-color="#1a78c2"
@@ -27,9 +27,14 @@
         </el-switch>
       </div>
 
-      <div class="op_OPK_font">字体</div>
+      <div class="op_OPK_borr">
+        <div class="block">
+          <span class="demonstration">圆角</span>
+          <el-slider v-model="op_radius_value" :min="0" :max="55"  :format-tooltip="sliderTooltip" @change="sliderChange"></el-slider>
+        </div>
+      </div>
 
-      <div class="op_OPK_borr">圆角</div>
+      <div class="op_OPK_font">字体</div>
 
       <div class="op_OPK_bodyColor">主题色</div>
     </div>
@@ -44,7 +49,9 @@ export default {
       // 设置框显示或隐藏
       OPK_IS:false,
       // 夜间模式是否开启
-      nightMode_Value:false
+      nightMode_Value:false,
+      // 圆角值
+      op_radius_value:0,
     }
   },
   props:{
@@ -63,10 +70,13 @@ export default {
     // 监听是否启动了黑夜模式
     'nightMode_Value'(val,oldVal){
       this.watch_nightMode_Value()
-    }
+    },
+    // 'op_radius_value'(val,oldVal){
+    //   console.log(val)
+    // }
   },
   created() {
-    
+    this.op_radius_value = localStorage.op_radius * 1
   },
   mounted() {
     // 默认初始化显示框位置
@@ -74,7 +84,7 @@ export default {
     // 默认初始化是否夜间模式
     this.nightMode_Value = localStorage.op_nightMode=="false"?false:true;
     this.watch_nightMode_Value()
-    
+
   },
   methods:{
     // 点击设置框的显示与隐藏
@@ -86,11 +96,11 @@ export default {
       var op_OPK = document.querySelector('.op_OPK')
       if (val=="left") {
         op_OPK.style.left = ""
-        op_OPK.style.right = "-320px"
+        op_OPK.style.right = "-370px"
         // console.log(this.op_LR)
       }else{
         op_OPK.style.right = ""
-        op_OPK.style.left = "-320px"
+        op_OPK.style.left = "-370px"
         // console.log(this.op_LR)
       }
     },
@@ -100,46 +110,52 @@ export default {
     },
     // 夜间模式初始化css
     watch_nightMode_Value(){
-      var root = document.querySelector(':root')
       if (this.nightMode_Value===true ||this.nightMode_Value==="true") {
         // 黑夜模式启动
-        root.setAttribute('style',`
-        --nightMode1:rgb(26, 26, 26);
-        --nightMode2:rgb(54, 54, 54);
-        --nightMode3:rgb(255,255,255);
-        --nightjb1:rgb(26, 26, 26);
-        --nightjb2:rgb(26,26,26);
-        --nightFont:rgb(184, 184, 184);
-        --nightjbser1:rgb(42, 42, 42); 
-        --nightjbser2:rgb(42, 42, 42); 
-        --nightText1:rgb(42, 42, 42);
-        --nightText2:rgb(53, 53, 53);
-        --nightText3:rgb(68, 68, 68);
-        --nightText4:rgb(190, 190, 190);
-        --nightLeftSite:rgb(53, 53, 53);
-        --nightLeftSite2:rgb(190, 190, 190);
-        `) 
+        this.$fz.VarCssSet('--nightMode1',"rgb(26, 26, 26)")
+        this.$fz.VarCssSet('--nightMode2',"rgb(54, 54, 54)")
+        this.$fz.VarCssSet('--nightMode3',"rgb(255,255,255)")
+        this.$fz.VarCssSet('--nightjb1',"rgb(26, 26, 26)")
+        this.$fz.VarCssSet('--nightjb2',"rgb(26,26,26)")
+        this.$fz.VarCssSet('--nightFont',"rgb(184, 184, 184)")
+        this.$fz.VarCssSet('--nightjbser1',"rgb(42, 42, 42)")
+        this.$fz.VarCssSet('--nightjbser2',"rgb(42, 42, 42)")
+        this.$fz.VarCssSet('--nightText1',"rgb(42, 42, 42)")
+        this.$fz.VarCssSet('--nightText2',"rgb(53, 53, 53)")
+        this.$fz.VarCssSet('--nightText3',"rgb(68, 68, 68)")
+        this.$fz.VarCssSet('--nightText4',"rgb(190, 190, 190)")
+        this.$fz.VarCssSet('--nightLeftSite',"rgb(53, 53, 53)")
+        this.$fz.VarCssSet('--nightLeftSite2',"rgb(190, 190, 190)")
       }else{
         // 关闭黑夜模式
-        root.setAttribute('style',`
-        --nightMode1:rgb(255, 255, 255);
-        --nightMode2:rgb(255, 255, 255);
-        --nightMode3:rgb(0,0,0);
-        --nightjb1:rgb(181, 136, 230);
-        --nightjb2:rgb(40, 20, 131);
-        --nightFont:rgb(255,255,255);
-        --nightjbser1:rgb(181, 136, 230); 
-        --nightjbser2:rgb(100, 58, 178); 
-        --nightText1:rgb(255,255,255);
-        --nightText2:rgb(255,255,255);
-        --nightText3:rgb(214, 218, 226);
-        --nightText4:rgb(0, 0, 0);
-        --nightLeftSite:rgb(255,255,255);
-        --nightLeftSite2:rgb(111, 84, 186);
-        `)
+        this.$fz.VarCssSet('--nightMode1',"rgb(255, 255, 255)")
+        this.$fz.VarCssSet('--nightMode2',"rgb(255, 255, 255)")
+        this.$fz.VarCssSet('--nightMode3',"rgb(0,0,0)")
+        this.$fz.VarCssSet('--nightjb1',"rgb(181, 136, 230)")
+        this.$fz.VarCssSet('--nightjb2',"rgb(40, 20, 131)")
+        this.$fz.VarCssSet('--nightFont',"rgb(255,255,255)")
+        this.$fz.VarCssSet('--nightjbser1',"rgb(181, 136, 230)")
+        this.$fz.VarCssSet('--nightjbser2',"rgb(100, 58, 178)")
+        this.$fz.VarCssSet('--nightText1',"rgb(255,255,255)")
+        this.$fz.VarCssSet('--nightText2',"rgb(255,255,255)")
+        this.$fz.VarCssSet('--nightText3',"rgb(214, 218, 226)")
+        this.$fz.VarCssSet('--nightText4',"rgb(0, 0, 0)")
+        this.$fz.VarCssSet('--nightLeftSite',"rgb(255,255,255)")
+        this.$fz.VarCssSet('--nightLeftSite2',"rgb(111, 84, 186)")
       }
 
       this.$bus.$emit('nightMode',this.nightMode_Value)
+    },
+    
+    // 滑动框提示文字
+    sliderTooltip(e){
+      return e + ' px'
+    },
+    // 滑动块拖动触发
+    sliderChange(val){
+      localStorage.op_radius = val
+      var value = val + 'px'
+      this.$fz.VarCssSet('--borderRadius',value)
     }
   }
 }
@@ -163,8 +179,8 @@ export default {
 
 
 .op_OPK{
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   position: absolute;
   bottom: 10px;
   border-radius:var(--borderRadius);
@@ -191,5 +207,18 @@ export default {
 .op_OPK_mode{
   display: flex;
   justify-content: space-between;
+}
+
+.block{
+  width: 100%;
+  display: flex;
+  flex-direction:row ;
+  justify-content: space-between;
+}
+.demonstration{
+  line-height: 40px;
+}
+.block>>>.el-slider__runway{
+  width: 200px;
 }
 </style>

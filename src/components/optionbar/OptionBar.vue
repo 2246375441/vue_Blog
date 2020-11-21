@@ -40,7 +40,7 @@ export default {
     DefaultSettings(){
       // console.log(localStorage)
       if(localStorage.getItem('op_LR')==null){localStorage.setItem('op_LR','left')}
-      if(localStorage.getItem('op_radius')==null){localStorage.setItem('op_radius','20px')}
+      if(localStorage.getItem('op_radius')==null){localStorage.setItem('op_radius',20)}
       if(localStorage.getItem('op_nightMode')==null){localStorage.setItem('op_nightMode','false')}
       
 
