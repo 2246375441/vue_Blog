@@ -47,109 +47,6 @@
               <img src="../../../assets/img/wx.jpg" alt="">
             </div>
 
-            <!-- 测试滚动 -->
-            <ul>
-              <li>第1个盒子</li>
-              <li>第2个盒子</li>
-              <li>第3个盒子</li>
-              <li>第4个盒子</li>
-              <li>第5个盒子</li>
-              <li>第6个盒子</li>
-              <li>第7个盒子</li>
-              <li>第8个盒子</li>
-              <li>第9个盒子</li>
-              <li>第10个盒子</li>
-              <li>第11个盒子</li>
-              <li>第12个盒子</li>
-              <li>第13个盒子</li>
-              <li>第14个盒子</li>
-              <li>第15个盒子</li>
-              <li>第16个盒子</li>
-              <li>第17个盒子</li>
-              <li>第18个盒子</li>
-              <li>第19个盒子</li>
-              <li>第20个盒子</li>
-              <li>第21个盒子</li>
-              <li>第22个盒子</li>
-              <li>第23个盒子</li>
-              <li>第24个盒子</li>
-              <li>第25个盒子</li>
-              <li>第26个盒子</li>
-              <li>第27个盒子</li>
-              <li>第28个盒子</li>
-              <li>第29个盒子</li>
-              <li>第30个盒子</li>
-              <li>第31个盒子</li>
-              <li>第32个盒子</li>
-              <li>第33个盒子</li>
-              <li>第34个盒子</li>
-              <li>第35个盒子</li>
-              <li>第36个盒子</li>
-              <li>第37个盒子</li>
-              <li>第38个盒子</li>
-              <li>第39个盒子</li>
-              <li>第40个盒子</li>
-              <li>第41个盒子</li>
-              <li>第42个盒子</li>
-              <li>第43个盒子</li>
-              <li>第44个盒子</li>
-              <li>第45个盒子</li>
-              <li>第46个盒子</li>
-              <li>第47个盒子</li>
-              <li>第48个盒子</li>
-              <li>第49个盒子</li>
-              <li>第50个盒子</li>
-              <li>第51个盒子</li>
-              <li>第52个盒子</li>
-              <li>第53个盒子</li>
-              <li>第54个盒子</li>
-              <li>第55个盒子</li>
-              <li>第56个盒子</li>
-              <li>第57个盒子</li>
-              <li>第58个盒子</li>
-              <li>第59个盒子</li>
-              <li>第60个盒子</li>
-              <li>第61个盒子</li>
-              <li>第62个盒子</li>
-              <li>第63个盒子</li>
-              <li>第64个盒子</li>
-              <li>第65个盒子</li>
-              <li>第66个盒子</li>
-              <li>第67个盒子</li>
-              <li>第68个盒子</li>
-              <li>第69个盒子</li>
-              <li>第70个盒子</li>
-              <li>第71个盒子</li>
-              <li>第72个盒子</li>
-              <li>第73个盒子</li>
-              <li>第74个盒子</li>
-              <li>第75个盒子</li>
-              <li>第76个盒子</li>
-              <li>第77个盒子</li>
-              <li>第78个盒子</li>
-              <li>第79个盒子</li>
-              <li>第80个盒子</li>
-              <li>第81个盒子</li>
-              <li>第82个盒子</li>
-              <li>第83个盒子</li>
-              <li>第84个盒子</li>
-              <li>第85个盒子</li>
-              <li>第86个盒子</li>
-              <li>第87个盒子</li>
-              <li>第88个盒子</li>
-              <li>第89个盒子</li>
-              <li>第90个盒子</li>
-              <li>第91个盒子</li>
-              <li>第92个盒子</li>
-              <li>第93个盒子</li>
-              <li>第94个盒子</li>
-              <li>第95个盒子</li>
-              <li>第96个盒子</li>
-              <li>第97个盒子</li>
-              <li>第98个盒子</li>
-              <li>第99个盒子</li>
-              <li>第100个盒子</li>
-            </ul>
           </el-scrollbar>
         </div>
       </div>
@@ -207,7 +104,7 @@ a{
   /* background-color: rgb(255, 255, 255); */
   background-color: var(--nightLeftSite);
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
-  border-radius: 20px;
+  border-radius: var(--borderRadius);
   margin-top: 10px;
 }
 .pc2{
@@ -216,7 +113,7 @@ a{
   /* background-color: rgb(255, 255, 255); */
   background-color: var(--nightLeftSite);
   box-shadow: 0 15px 35px rgba(50,50,93,.2),0 5px 15px rgba(0,0,0,.2)!important;
-  border-radius: 20px;
+  border-radius: var(--borderRadius);
   position: fixed;
   top: 90px;
   width: 240px;
@@ -295,7 +192,7 @@ a{
 .content_left_logo img{
   width:100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: var(--borderRadius);
   box-shadow: 0 15px 35px rgba(50,50,93,.2),0 2px 5px rgba(0,0,0,.1)!important;
 }
 
@@ -370,7 +267,7 @@ a{
   left: 0;
   bottom: -4px;
   z-index: -1;
-  border-radius: 5px;
+  border-radius: var(--borderRadius);
 }
 .content_right_class_div{
   font-size: 15px;

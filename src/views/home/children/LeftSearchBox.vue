@@ -34,6 +34,7 @@ export default {
 .searchBox{
   width: 100%;
   height: 160px;
+  border-radius: var(--borderRadius);
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
 }
 .searchNav{
@@ -44,7 +45,7 @@ export default {
   background: -o-linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
   background: -moz-linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
   background: linear-gradient(to right,var(--nightjbser1),var(--nightjbser2)); 
-  border-radius: 20px 20px 0 0;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
 
   font-size: 20px;
   color: white;
@@ -56,7 +57,7 @@ export default {
   width: 100%;
   height: 50%;
   /* background-color: #ffffff; */
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 var(--borderRadius) var(--borderRadius);
   display: flex;
   align-items: center;
   justify-content: center;

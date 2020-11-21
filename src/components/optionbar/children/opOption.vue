@@ -76,6 +76,7 @@ export default {
     // }
   },
   created() {
+    // 获取localStorage.op_radius中全局圆角值
     this.op_radius_value = localStorage.op_radius * 1
   },
   mounted() {
@@ -83,8 +84,10 @@ export default {
     this.watch_op_LR(this.op_LR)
     // 默认初始化是否夜间模式
     this.nightMode_Value = localStorage.op_nightMode=="false"?false:true;
+    // 初始化 夜间模式开启或关闭页面
     this.watch_nightMode_Value()
-
+    // 初始化 全局圆角值
+    this.$fz.VarCssSet('--borderRadius',this.op_radius_value+'px')
   },
   methods:{
     // 点击设置框的显示与隐藏
