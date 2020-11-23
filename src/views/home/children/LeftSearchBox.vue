@@ -35,7 +35,8 @@ export default {
   width: 100%;
   height: 160px;
   border-radius: var(--borderRadius);
-  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
+  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important; */
+  box-shadow: var(--bodyShadow);
 }
 .searchNav{
   width: 100%;

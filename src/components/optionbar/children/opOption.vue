@@ -34,7 +34,14 @@
         </div>
       </div>
 
-      <div class="op_OPK_font">字体</div>
+      <div class="op_OPK_showYY">
+        <div>阴影</div>
+        <div class="showYY_btns">
+          <div class="btn  btn-dh" :class="{'btn_active':btn_ac_is===0}" style="border-radius:5px 0 0 5px;">浅阴影</div>
+          <div class="btn" style="border-radius:0 5px 5px 0;" :class="{'btn_active':btn_ac_is===1}" >深阴影</div>
+
+        </div>
+      </div>
 
       <div class="op_OPK_bodyColor">主题色</div>
     </div>
@@ -52,6 +59,7 @@ export default {
       nightMode_Value:false,
       // 圆角值
       op_radius_value:0,
+      btn_ac_is:-1
     }
   },
   props:{
@@ -88,6 +96,14 @@ export default {
     this.watch_nightMode_Value()
     // 初始化 全局圆角值
     this.$fz.VarCssSet('--borderRadius',this.op_radius_value+'px')
+    // 初始化阴影设置
+    this.btn_ac_is = localStorage.op_shadow
+
+
+
+    // 所有按钮
+    this.getBtn()
+    this.btn_click_mou()
   },
   methods:{
     // 点击设置框的显示与隐藏
@@ -159,6 +175,52 @@ export default {
       localStorage.op_radius = val
       var value = val + 'px'
       this.$fz.VarCssSet('--borderRadius',value)
+    },
+    // 阴影按钮
+    getBtn(){
+      var btns = document.querySelectorAll('.btn')
+      var that = this
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].onmouseover = function(){
+          var ls = this.className.split(' ')
+          if (ls.indexOf('btn_mou')===-1) {
+            ls.push('btn_mou')
+          }
+          this.className = ls.join(' ')
+      }
+        btns[i].onmouseout  = function(){
+          var ls = this.className.split(' ')
+          if (ls.indexOf('btn_mou')!==-1) {
+            var i = ls.indexOf('btn_mou')
+            ls.splice(i,1)
+          }
+          this.className = ls.join(' ')
+        }
+        btns[i].onclick  = function(){
+          that.btn_ac_is = i
+          if (i===0) {
+            that.$fz.VarCssSet('--bodyShadow','0 4px 13px rgba(48, 1, 1, 0.1) !important')
+            window.localStorage.op_shadow = i
+          }else{
+            that.$fz.VarCssSet('--bodyShadow','0 15px 35px rgba(48, 1, 1, 0.1),0 5px 15px rgba(0,0,0,.07)!important')
+            window.localStorage.op_shadow = i
+          }
+        }
+      }
+    },
+    // 阴影按钮初始化
+    btn_click_mou(){
+      console.log(this.btn_ac_is)
+      var btn = document.querySelectorAll('.btn')
+      // btn[this.btn_ac_is].className = btn[this.btn_ac_is].className+ 'btn_active'
+      console.log(btn[this.btn_ac_is].className+ 'btn_active')
+
+
+      if (this.btn_ac_is ===0) {
+        this.$fz.VarCssSet('--bodyShadow','0 4px 13px rgba(48, 1, 1, 0.1) !important')
+      }else{
+        this.$fz.VarCssSet('--bodyShadow','0 15px 35px rgba(48, 1, 1, 0.1),0 5px 15px rgba(0,0,0,.07)!important')
+      }
     }
   }
 }
@@ -166,7 +228,8 @@ export default {
 
 <style scoped>
 #op_OP{
-  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
+  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important; */
+  box-shadow: var(--bodyShadow);
   margin: 10px 0;
   
 }
@@ -187,11 +250,12 @@ export default {
   position: absolute;
   bottom: 10px;
   border-radius:var(--borderRadius);
-  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important;
-  background-color:var(--nightMode2);
+  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important; */
+  box-shadow: var(--bodyShadow);
+ background-color:var(--nightMode2);
   animation: op_OPKDH 0.4s ease;
   opacity: 1;
-  padding: 20px;
+  padding: 28px;
   box-sizing: border-box;
   font-size: 20px;
 
@@ -207,10 +271,15 @@ export default {
   }
 }
 
+
 .op_OPK_mode{
   display: flex;
   justify-content: space-between;
+  height: 40px;
+  align-items: center;
 }
+
+
 
 .block{
   width: 100%;
@@ -223,5 +292,52 @@ export default {
 }
 .block>>>.el-slider__runway{
   width: 200px;
+}
+
+
+.btn{
+  background-color: white;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor:pointer;
+}
+.op_OPK_showYY{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.showYY_btns{
+  display: flex;
+}
+.showYY_btns .btn{
+  height: 30px;
+  width: 70px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  border: solid 1px #5e72e4;
+  color: #6377e4;
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn_active{
+  color: #ffffff !important;
+  background-color: #5e72e4;
+}
+.btn_mou{
+  background-color: #3b4ebd !important;
+  color: #ffffff !important;
+}
+
+.op_OPK_bodyColor{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

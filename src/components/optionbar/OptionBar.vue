@@ -42,6 +42,7 @@ export default {
       if(localStorage.getItem('op_LR')==null){localStorage.setItem('op_LR','left')}
       if(localStorage.getItem('op_radius')==null){localStorage.setItem('op_radius',20)}
       if(localStorage.getItem('op_nightMode')==null){localStorage.setItem('op_nightMode','false')}
+      if(localStorage.getItem('op_shadow')==null){localStorage.setItem('op_shadow',1)}
       
 
       this.op_LR = localStorage.getItem('op_LR')

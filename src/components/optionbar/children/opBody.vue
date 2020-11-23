@@ -29,7 +29,8 @@ export default {
 
 <style scoped>
 #op_Body{
-  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.17)!important;
+  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.17)!important; */
+  box-shadow: var(--bodyShadow);
   margin-bottom: 10px;
   height: 33.78px;
   width: 50px;
