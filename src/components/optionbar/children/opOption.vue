@@ -210,11 +210,7 @@ export default {
     },
     // 阴影按钮初始化
     btn_click_mou(){
-      console.log(this.btn_ac_is)
-      var btn = document.querySelectorAll('.btn')
-      // btn[this.btn_ac_is].className = btn[this.btn_ac_is].className+ 'btn_active'
-      console.log(btn[this.btn_ac_is].className+ 'btn_active')
-
+      this.btn_ac_is = localStorage.op_shadow * 1
 
       if (this.btn_ac_is ===0) {
         this.$fz.VarCssSet('--bodyShadow','0 4px 13px rgba(48, 1, 1, 0.1) !important')
