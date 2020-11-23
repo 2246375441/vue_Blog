@@ -23,5 +23,7 @@
 
   --nightFont:rgb(184, 184, 184); /* rgb(255,255,255) */
 
+
+  /* 全局阴影 浅阴影||深阴影 */
   --bodyShadow:0 15px 35px rgba(48, 1, 1, 0.1),0 5px 15px rgba(0,0,0,.07)!important;
 }

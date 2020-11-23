@@ -37,9 +37,8 @@
       <div class="op_OPK_showYY">
         <div>阴影</div>
         <div class="showYY_btns">
-          <div class="btn  btn-dh" :class="{'btn_active':btn_ac_is===0}" style="border-radius:5px 0 0 5px;">浅阴影</div>
+          <div class="btn" :class="{'btn_active':btn_ac_is===0}" style="border-radius:5px 0 0 5px;">浅阴影</div>
           <div class="btn" style="border-radius:0 5px 5px 0;" :class="{'btn_active':btn_ac_is===1}" >深阴影</div>
-
         </div>
       </div>
 
@@ -79,9 +78,6 @@ export default {
     'nightMode_Value'(val,oldVal){
       this.watch_nightMode_Value()
     },
-    // 'op_radius_value'(val,oldVal){
-    //   console.log(val)
-    // }
   },
   created() {
     // 获取localStorage.op_radius中全局圆角值
@@ -101,7 +97,7 @@ export default {
 
 
 
-    // 所有按钮
+    // 阴影按钮初始化
     this.getBtn()
     this.btn_click_mou()
   },
