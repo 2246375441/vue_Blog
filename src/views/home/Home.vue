@@ -1,7 +1,7 @@
 <template>
   <div id="home-wk">
     <div class="logo">
-      <!-- 页面logo(老陈博客欢迎你) -->
+      <!-- 页面文字logo(老陈博客欢迎你) -->
       <top-logo></top-logo>
     </div>
     <!-- 内容区域 -->
