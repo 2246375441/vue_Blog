@@ -14,8 +14,12 @@
       ></el-button>
     </el-tooltip>
 
-    <div class="op_OPK" v-show="OPK_IS">
-      
+    <!-- 关闭按钮 -->
+    <div class="op_OPK" v-show="OPK_IS" ref="_op">
+      <div class="op_kg">
+        <i class="el-icon-close" @click="op_kg"></i>
+      </div>
+
       <div class="op_OPK_mode">
         <div>夜间模式</div>
         <el-switch
@@ -113,6 +117,14 @@ export default {
     this.btn_click_mou()
   },
   methods:{
+    // 显示框关闭按钮
+    op_kg(){
+      this.$refs._op.className='op_OPK op_gb_dh'
+      setTimeout(()=>{
+        this.OPK_IS = false
+        this.$refs._op.className='op_OPK'
+      },700)
+    },
     // 点击设置框的显示与隐藏
     btnClick(){
       this.OPK_IS = !this.OPK_IS
@@ -236,35 +248,19 @@ export default {
 </script>
 
 <style scoped>
-#op_OP{
-  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important; */
-  box-shadow: var(--bodyShadow);
-  margin: 10px 0;
-  
-}
-#op_OP >>>.el-icon-s-tools{
-  color:#5e72e4;
-  font-size: 18px;
-}
-
-
-.op{
-  position: relative;
-}
-
-
+/* pc端 */
+@media screen and (min-width:450px){
 .op_OPK{
   width: 350px;
   height: 350px;
   position: absolute;
   bottom: 10px;
   border-radius:var(--borderRadius);
-  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important; */
   box-shadow: var(--bodyShadow);
- background-color:var(--nightMode2);
-  animation: op_OPKDH 0.4s ease;
+  background-color:var(--nightMode2);
+  animation: op_OPKDH 0.7s ease;
   opacity: 1;
-  padding: 28px;
+  padding: 18px 28px 28px 28px;
   box-sizing: border-box;
   font-size: 20px;
 
@@ -279,6 +275,82 @@ export default {
     opacity: 1;
   }
 }
+}
+/* 移动端 小于450触发 */
+@media screen and (max-width:450px){
+.op_OPK{
+  width: 96%;
+  height: 350px;
+  position: fixed;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: auto;
+  border-radius:var(--borderRadius) var(--borderRadius) 0 0;
+  box-shadow: var(--bodyShadow);
+  background-color:var(--nightMode2);
+  animation: op_OPKDH 0.7s ease;
+  opacity: 1;
+  padding: 18px 28px 28px 28px;
+  box-sizing: border-box;
+  font-size: 20px;
+
+  color: var(--nightMode3);
+  z-index: 999;
+}
+
+@keyframes op_OPKDH{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+}
+
+
+#op_OP{
+  box-shadow: var(--bodyShadow);
+  margin: 10px 0;
+}
+#op_OP >>>.el-icon-s-tools{
+  color:#5e72e4;
+  font-size: 18px;
+}
+
+
+.op{
+  position: relative;
+}
+
+
+
+
+.op_kg{
+  width: 100%;
+  display: flex;
+  justify-content:flex-end;
+}
+.op_kg>>>.el-icon-close{
+  cursor:pointer;
+  font-weight: bold;
+  display: inline-block;
+}
+.op_gb_dh{
+  animation: op_gb_dh_false 0.7s ease;
+}
+@keyframes op_gb_dh_false{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
 
 
 .op_OPK_mode{
