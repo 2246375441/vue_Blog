@@ -42,7 +42,12 @@
         </div>
       </div>
 
-      <div class="op_OPK_bodyColor">主题色</div>
+      <div class="op_OPK_bodyColor">
+        <div>主题色</div>
+        <div class="bodyColorDiv">
+          <el-color-picker v-model="bodyColor" size="small" @change="bodyColorChange" :predefine="bodyColorFine"></el-color-picker>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -58,7 +63,12 @@ export default {
       nightMode_Value:false,
       // 圆角值
       op_radius_value:0,
-      btn_ac_is:-1
+      // 阴影模式
+      btn_ac_is:-1,
+      // 主题色
+      bodyColor:'',
+      // 主题色 预定义
+      bodyColorFine:[`rgb(116,134,231)`,`rgb(68, 68, 68)`,`rgb(26, 26, 26)`]
     }
   },
   props:{
@@ -94,7 +104,8 @@ export default {
     this.$fz.VarCssSet('--borderRadius',this.op_radius_value+'px')
     // 初始化阴影设置
     this.btn_ac_is = localStorage.op_shadow
-
+    // 初始化主题色
+    this.bodyColor = localStorage.op_bodyColor
 
 
     // 阴影按钮初始化
@@ -213,6 +224,10 @@ export default {
       }else{
         this.$fz.VarCssSet('--bodyShadow','0 15px 35px rgba(48, 1, 1, 0.1),0 5px 15px rgba(0,0,0,.07)!important')
       }
+    },
+    // 
+    bodyColorChange(){
+      console.log('修改')
     }
   }
 }
@@ -330,6 +345,10 @@ export default {
   height: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.bodyColorDiv{
+  display: flex;
   align-items: center;
 }
 </style>
