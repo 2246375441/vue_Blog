@@ -45,7 +45,7 @@
       <div class="op_OPK_bodyColor">
         <div>主题色</div>
         <div class="bodyColorDiv">
-          <el-color-picker v-model="bodyColor" size="small" @change="bodyColorChange" :predefine="bodyColorFine"></el-color-picker>
+          <el-color-picker v-model="bodyColor" size="small" @change="bodyColorChange" :predefine="bodyColorFine" color-format="rgb"></el-color-picker>
         </div>
       </div>
     </div>
@@ -227,7 +227,9 @@ export default {
     },
     // 
     bodyColorChange(){
-      console.log('修改')
+      localStorage.op_bodyColor = this.bodyColor
+      this.$bus.$emit('op_bodyColor',this.bodyColor)
+
     }
   }
 }

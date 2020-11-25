@@ -72,7 +72,9 @@ export default {
       // 搜索框 绑定值
       searchValue:'',
       // 移动端 点击按钮显示区域
-      appBodyIS:false
+      appBodyIS:false,
+      // 主题色
+      op_bodyColor:''
     }
   },
   methods:{
@@ -119,17 +121,21 @@ export default {
     handleScroll(e){
       var scrollTop = document.documentElement.scrollTop
       var bfb = scrollTop/400
-      this.$bus.$emit('scrollTop',scrollTop)
+      this.$bus.$emit('scrollTop',scrollTop)  
       var nav = document.getElementById('pc')
+
+      var lsrgb = this.op_bodyColor
+      lsrgb = lsrgb.slice(0,lsrgb.length-1) + `,${bfb})`
+
       var app_nav = document.getElementsByClassName('app-nav')[0]
       if (bfb <= 1) {
-        nav.style.backgroundColor ='rgb(116, 134, 231,'+bfb+')'
-        app_nav.style.backgroundColor ='rgb(116, 134, 231,'+bfb+')'
+        nav.style.backgroundColor =lsrgb
+        app_nav.style.backgroundColor =lsrgb
         nav.style.height = 90 - (bfb*20) + 'px'
         app_nav.style.height = 90 - (bfb*20) + 'px'
       }else{
-        nav.style.backgroundColor ='rgb(116, 134, 231,1)'
-        app_nav.style.backgroundColor ='rgb(116, 134, 231,1)'
+        nav.style.backgroundColor =this.op_bodyColor 
+        app_nav.style.backgroundColor =this.op_bodyColor 
         nav.style.height = '70px'
         app_nav.style.height = '70px'
       }
@@ -158,6 +164,14 @@ export default {
     window.onmousewheel = document.onmousewheel = this.handleScroll
     // 给页面添加 鼠标变化
     document.querySelector('.el-icon-menu').onmouseover = this.app_mou
+
+
+    // 初始化主题色
+    this.op_bodyColor = localStorage.op_bodyColor
+    // 每当主题色发生改变时触发
+    this.$bus.$on('op_bodyColor',res=>{
+      this.op_bodyColor = res
+    })
   }
 }
 </script>
