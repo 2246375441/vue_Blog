@@ -123,7 +123,7 @@ export default {
       setTimeout(()=>{
         this.OPK_IS = false
         this.$refs._op.className='op_OPK'
-      },700)
+      },600)
     },
     // 点击设置框的显示与隐藏
     btnClick(){
