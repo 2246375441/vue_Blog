@@ -6,7 +6,14 @@
     </div>
 
     <section>
-      <div class="home_left" ></div>
+      <div class="home_left" >
+        <div class="home_left" >
+        <!-- 左边小搜索框 -->
+        <left-search-box></left-search-box>
+        <!-- 左边站点概念框 -->
+        <left-site></left-site>
+      </div>
+      </div>
       <div class="home_right"></div>  
     </section>
   </div>
@@ -15,10 +22,14 @@
 <script>
 // http://192.168.0.101:8080/?#/deta/1
 import topLogo from '../../components/topLogo/topLogo'
+import LeftSearchBox from './children/LeftSearchBox'
+import leftSite from './children/leftSite'
 export default {
   name:'Details',
   components:{
-    topLogo
+    topLogo,
+    leftSite,
+    LeftSearchBox
   }
 }
 </script>
@@ -64,7 +75,7 @@ section{
   min-width: 240px;
   height: 1000px;
   position: relative;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .home_right{
