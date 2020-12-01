@@ -20,7 +20,8 @@ export default {
   components:{
     NavBar,
     BackgroundMap,
-    OptionBar
+    OptionBar,
+
   },
 }
 </script>
@@ -31,4 +32,12 @@ export default {
   background-color: var(--nightText3);
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
+.logo{
+  margin-top: 150px;
+  margin-bottom: 80px;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
 </style>

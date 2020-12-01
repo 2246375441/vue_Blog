@@ -33,10 +33,10 @@
 </template>
 
 <script>
+import topLogo from '../../components/topLogo/topLogo'
 import LeftSearchBox from './children/LeftSearchBox'
 import leftSite from './children/leftSite'
 import rightItem from './children/rightItem'
-import topLogo from './children/topLogo'
 export default {
   data() {
     return {

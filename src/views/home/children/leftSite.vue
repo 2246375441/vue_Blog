@@ -93,6 +93,12 @@ export default {
 </script>
 
 <style scoped>
+.nav_left{
+  cursor:pointer;
+}
+.nav_right{
+  cursor:pointer;
+}
 a{
   text-decoration:none;
   color:var(--nightLeftSite2)  !important;
