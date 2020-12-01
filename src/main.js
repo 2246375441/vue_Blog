@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import Bus from './components/bus/bus'
+import $ from 'jquery' 
 
 import './assets/css/overallSituation.css' //导入全局默认css
 import './assets/css/root.css' //设置全局颜色--xx  var(--xx)
@@ -17,6 +18,7 @@ Vue.use(ElementUI);
 
 Vue.prototype.$bus = Bus  //将事件总线bus挂载到vue原型对象上
 Vue.prototype.$fz = fz    //将封装的JS挂载到vue原型对象上
+Vue.prototype.$ = $ //挂载jQuery
 
 new Vue({
   router,
