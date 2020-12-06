@@ -85,10 +85,11 @@ export default {
 .logo{
   margin-top: 150px;
   margin-bottom: 80px;
-  font-size: 30px;
+  font-size:30px;
   font-weight: bold;
   color: white;
-}
+  text-align: center;
+} 
 
 
 

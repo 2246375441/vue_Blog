@@ -14,7 +14,9 @@
         <left-site></left-site>
       </div>
       </div>
-      <div class="home_right"></div>  
+      <div class="home_right">
+        <right-item></right-item>
+      </div>  
     </section>
   </div>
 </template>
@@ -24,12 +26,14 @@
 import topLogo from '../../components/topLogo/topLogo'
 import LeftSearchBox from './children/LeftSearchBox'
 import leftSite from './children/leftSite'
+import rightItem from './children/rightItem'
 export default {
   name:'Details',
   components:{
     topLogo,
     leftSite,
-    LeftSearchBox
+    LeftSearchBox,
+    rightItem
   }
 }
 </script>
@@ -61,6 +65,7 @@ export default {
   font-size: 30px;
   font-weight: bold;
   color: white;
+  text-align: center;
 }
 section{
   width: 100%;

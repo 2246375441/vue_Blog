@@ -1,5 +1,5 @@
 <template>
-  <div class="top-logo">
+  <div class="topLogo">
     <div class="wz1"></div>
   </div>
 </template>
@@ -11,16 +11,16 @@ export default {
 </script>
 
 <style scoped>
-.top-logo{
+.topLogo{
   font-size: 30px;
   font-weight: bold;
   color: white;
+  width: 100% !important;
+  height: 30px;
+  background-color: red !important;
 }
 .wz1{
-  position: relative;
-  width:400px;
   height: 30px;
-  text-align: center;
 }
 .wz1::after{
   content:'努力学习前端的小菜鸟！！';

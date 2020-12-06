@@ -31,6 +31,7 @@ export default {
 #app{
   background-color: var(--nightText3);
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  width: 100%;
 }
 .logo{
   margin-top: 150px;
