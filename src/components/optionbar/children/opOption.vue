@@ -6,6 +6,7 @@
       content="打开设置"
       placement="left"
       id="op_OP"
+      :disabled='isDisabled'
     >
       <el-button
         icon="el-icon-s-tools"
@@ -72,7 +73,9 @@ export default {
       // 主题色
       bodyColor:'',
       // 主题色 预定义
-      bodyColorFine:[`rgb(116,134,231)`,`rgb(68, 68, 68)`,`rgb(26, 26, 26)`]
+      bodyColorFine:[`rgb(116,134,231)`,`rgb(68, 68, 68)`,`rgb(26, 26, 26)`],
+      // 监听提示框显示
+      isDisabled:false,
     }
   },
   props:{
@@ -249,7 +252,7 @@ export default {
 
 <style scoped>
 /* pc端 */
-@media screen and (min-width:450px){
+@media screen and (min-width:500px){
 .op_OPK{
   width: 350px;
   height: 350px;
@@ -277,9 +280,9 @@ export default {
 }
 }
 /* 移动端 小于450触发 */
-@media screen and (max-width:450px){
+@media screen and (max-width:500px){
 .op_OPK{
-  width: 96%;
+  width: 96% !important;
   height: 350px;
   position: fixed;
   bottom: 0 !important;
@@ -296,7 +299,7 @@ export default {
   font-size: 20px;
 
   color: var(--nightMode3);
-  z-index: 999;
+  z-index: 999999999 !important;
 }
 
 @keyframes op_OPKDH{

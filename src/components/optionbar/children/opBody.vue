@@ -36,14 +36,19 @@ export default {
   },
   methods: {
     getHeight(){
-      this.op_Height = document.documentElement.clientHeight 
-      this.op_Height_body = document.body.clientHeight
+      // 页面可视高度
+      this.op_Height = this.$(document.body).height(); 
+      // 整体高度(包括滚动)
+      this.op_Height_body =this.$(document).height()-1
       
-      //判断浏览器类型(IE/FF)
-      var scr = document.documentElement.scrollTop || document.body.scrollTop;
+      //判断浏览器类型(IE/FF) 已滚高度
+      var scr = document.documentElement.scrollTop || document.body.scrollTop || this.$(window).scrollTop()
 
-      var _scr = this.op_Height_body - this.op_Height //可卷高度
+      // 可以滚动高度
+      var _scr = this.op_Height_body - this.op_Height 
+      // 已阅读百分比
       var bfb =  scr/_scr * 100
+      // 转换为整数
       var jg = bfb >> 0
       this.opBody_value = jg
 
