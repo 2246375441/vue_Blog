@@ -8,8 +8,13 @@
       </div>
       <div class="content">
         <!-- 文章目录 -->
-        <div v-show="contentIS===0">
-          文章目录区域
+        <div v-show="contentIS===0" class="content_text">
+          <ul>
+            <li class="active">第一行</li>
+            <li>第二行</li>
+            <li>第三行</li>
+            <li>第四行</li>
+          </ul>
         </div>
 
 
@@ -321,5 +326,23 @@ a{
 .content_right_wx img{
   width: 100%;
   height: auto;
+}
+
+
+
+.content_text{
+  animation: contentDH 1s ease;
+}
+.content_text ul{
+  list-style: none;
+}
+.content_text ul li{
+  margin-top: 20px;
+  margin-left: 5px;
+  font-size: 20px;
+}
+.active{
+  color: #5f73e4;
+  font-weight: bold;
 }
 </style>
