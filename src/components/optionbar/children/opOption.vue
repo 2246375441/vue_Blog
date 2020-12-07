@@ -165,7 +165,7 @@ export default {
         this.$fz.VarCssSet('--nightText2',"rgb(53, 53, 53)")
         this.$fz.VarCssSet('--nightText3',"rgb(68, 68, 68)")
         this.$fz.VarCssSet('--nightText4',"rgb(190, 190, 190)")
-        this.$fz.VarCssSet('--nightLeftSite',"rgb(53, 53, 53)")
+        this.$fz.VarCssSet('--nightLeftSite',"rgb(68,68,68)")
         this.$fz.VarCssSet('--nightLeftSite2',"rgb(190, 190, 190)")
       }else{
         // 关闭黑夜模式
@@ -268,6 +268,8 @@ export default {
   font-size: 20px;
 
   color: var(--nightMode3);
+
+  z-index: 999999;
 }
 
 @keyframes op_OPKDH{

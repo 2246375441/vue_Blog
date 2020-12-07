@@ -53,9 +53,18 @@ export default {
   background-color: var(--nightText2);
 
   position: relative;
+
+  animation: itemDH 1s ease;
   
 }
-
+@keyframes itemDH{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 .item-title{
   font-size: 26px;
   letter-spacing: .5px;

@@ -7,7 +7,11 @@
       <!-- 导航栏左边 -->
       <div class="nav-left">
         <!-- 导航条 -->
-        <div class="nav-left-0 bold">博客首页丶</div>
+        <div class="nav-left-0 bold">
+          <router-link to="/" class="nav-left-0 bold">
+            博客首页丶
+          </router-link>
+        </div>
         <div class="nav-left-0">开发中.</div>
         <div class="nav-left-0">开发中.</div>
         <div class="nav-left-0">开发中.</div>
@@ -34,7 +38,11 @@
       <!-- 左边按钮 -->
       <div class="app-left"><i class="el-icon-menu" @click="app_tk"></i></div>
       <!-- 右边导航条 -->
-      <div class="app-right">老陈博客丶</div>
+      <div class="app-right">
+        <router-link to="/" class="app-nav">
+          老陈博客
+        </router-link>
+      </div>
       <!-- 点击左边按钮 显示区域 -->
       <div v-show='appBodyIS' id="appBody">
         <div class="sh">
@@ -211,6 +219,9 @@ export default {
 }
 .nav-left-0{
   margin: auto 20px auto 20px;
+  color:white;
+  text-decoration: none;
+  font-size: 18px;
 }
 .bold{
   font-weight: bold;
@@ -282,6 +293,12 @@ export default {
   font-size: 20px;
   color: white;
   margin-right: 20px;
+  text-decoration: none;
+}
+.app-nav{
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
 }
 .appBodyKai{
   width: 96%;

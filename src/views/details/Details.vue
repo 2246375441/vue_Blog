@@ -87,6 +87,6 @@ section{
   margin-left: 30px;
   width: calc(100% - 240px - 15%);
   height: 1000px;
-  background-color: palegreen;
+  /* background-color: palegreen; */
 }
 </style>

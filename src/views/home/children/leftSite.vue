@@ -261,7 +261,7 @@ a{
   font-weight: bold;
   color: #32325d;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   margin-top: 10px;
   margin-bottom: 10px;
 }

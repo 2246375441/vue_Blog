@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 #app{
-  background-color: var(--nightText3);
+  background-color: var(--nightLeftSite);
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   width: 100%;
 }

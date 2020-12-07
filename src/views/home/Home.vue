@@ -16,7 +16,7 @@
       <!-- 右边区域内容 100% 1000px-->
       <div class="home_right">
         <!-- 文章 -->
-        <right-item></right-item>
+        <right-item item-url="/deta/1"></right-item>
         <right-item></right-item>
         <right-item></right-item>
         <right-item></right-item>

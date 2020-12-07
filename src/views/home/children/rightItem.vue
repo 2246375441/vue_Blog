@@ -1,6 +1,7 @@
 <template>
   <div class="Item">
-    <div class="item-title">js代理模式理解和应用场景</div>
+    <div class="item-title"><router-link :to="itemUrl">js代理模式理解和应用场景</router-link></div>
+    
     <div class="item-nav">
       <div class="nav hg"><i class="el-icon-timer"></i>2020-11-02 11:47 </div>
       <div class="nav hg"><i class="el-icon-view"></i>4</div>
@@ -17,7 +18,13 @@
 
 <script>
 export default {
-  name:'rightItem'
+  name:'rightItem',
+  props:{
+    itemUrl:{
+      type:[String],
+      default:'999999999999999999'
+    }
+  }
 }
 </script>
 
@@ -34,11 +41,13 @@ export default {
   font-size: 26px!important;
 }
 }
+a{
+  text-decoration: none;
+  color: #5e72e4;
+
+}
 .Item{
   width: 100%;
-  /* height: 300px; */
-  /* background-color: #ffffff; */
-  /* box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07)!important; */
   box-shadow: var(--bodyShadow);
   border-radius: var(--borderRadius);
   display: flex;
