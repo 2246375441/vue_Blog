@@ -20,44 +20,42 @@
 export default {
   data() {
     return {
-      busBfb:0,
+      busBfb: 0,
 
     }
   },
-  methods:{
+  methods: {
     // 页面滚动事件
-    handleScroll(){
-      var bgHeight = document.querySelector('.back_Map')
-      var y1 = document.querySelector('.y1')
-      var y2 = document.querySelector('.y2')
-      var y3 = document.querySelector('.y3')
-      var y4 = document.querySelector('.y4')
-      var y5 = document.querySelector('.y5')
-      var y6 = document.querySelector('.y6')
-
-        this.$bus.$on('scrollTop',item=>{
+    handleScroll() {
+      this.$bus.$on('scrollTop', item => {
+        var bgHeight = document.querySelector('.back_Map')
+        var y1 = document.querySelector('.y1')
+        var y2 = document.querySelector('.y2')
+        var y3 = document.querySelector('.y3')
+        var y4 = document.querySelector('.y4')
+        var y5 = document.querySelector('.y5')
+        var y6 = document.querySelector('.y6')
         // this.busBfb = item
-        var bfb = item/400
-        if (bfb>1) {
+        var bfb = item / 400
+        if (bfb > 1) {
           bgHeight.style.height = '0px'
-        }else{
-          bgHeight.style.height = (500*(1-bfb)) +'px'
-          y1.style.top = 0 - item + 'px'
-          y2.style.top = 100 - item + 'px'
-          y3.style.top = 195 - item + 'px'
-          y4.style.top = 0 - item + 'px'
-          y5.style.top = 185 - item + 'px'
-          y6.style.top = 100 - item + 'px'
-
+        } else {
+          bgHeight.style.height = (500 * (1 - bfb)) + 'px'
         }
+        y1.style.top = 0 - item + 'px'
+        y2.style.top = 100 - item + 'px'
+        y3.style.top = 195 - item + 'px'
+        y4.style.top = 0 - item + 'px'
+        y5.style.top = 185 - item + 'px'
+        y6.style.top = 100 - item + 'px'
       })
     }
   },
-  mounted(){
+  mounted() {
     // 给页面添加滚动事件
-    window.addEventListener('scroll',this.handleScroll,true)
+    window.addEventListener('scroll', this.handleScroll, true)
 
-    this.$bus.$on('nightMode',(res)=>{
+    this.$bus.$on('nightMode', (res) => {
       // console.log(`rrrrr`,res)
       var y1 = document.querySelector('.y1')
       var y2 = document.querySelector('.y2')
@@ -65,14 +63,14 @@ export default {
       var y4 = document.querySelector('.y4')
       var y5 = document.querySelector('.y5')
       var y6 = document.querySelector('.y6')
-      if (res==true) {
+      if (res == true) {
         y1.style.backgroundColor = '#1a1a1a'
         y2.style.backgroundColor = '#1a1a1a'
         y3.style.backgroundColor = '#1a1a1a'
         y4.style.backgroundColor = '#1a1a1a'
         y5.style.backgroundColor = '#1a1a1a'
         y6.style.backgroundColor = '#1a1a1a'
-      }else{
+      } else {
         y1.style.backgroundColor = '#422ba8'
         y2.style.backgroundColor = '#816dd4'
         y3.style.backgroundColor = '#816dd4'
@@ -81,15 +79,18 @@ export default {
         y6.style.backgroundColor = '#7661c9'
       }
     })
+
+    this.$bus.$on('handleScrollBus', (scrollHeight) => {
+      this.$bus.$emit('scrollTop', scrollHeight)
+      this.handleScroll()
+    })
   },
-  watch: {
-    
-  },
+  watch: {},
 }
 </script>
 
 <style scoped>
-.back_Map{
+.back_Map {
   width: 100%;
   height: 500px;
   position: fixed;
@@ -97,26 +98,29 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  
-  background: linear-gradient(to top left,var(--nightjb1),var(--nightjb2));
+
+  background: linear-gradient(to top left, var(--nightjb1), var(--nightjb2));
   display: flex;
 
   -webkit-overflow-scrolling: touch;
 }
-.yl{
+
+.yl {
   position: relative;
   left: 0;
   height: 100%;
   width: 48%;
 }
-.yr{
+
+.yr {
   position: relative;
   right: 0;
   height: 100%;
   width: 48%;
 
 }
-.y1{
+
+.y1 {
   position: absolute;
   z-index: -877;
   width: 120px;
@@ -125,7 +129,8 @@ export default {
   background-color: #422ba8;
   left: -40px;
 }
-.y2{
+
+.y2 {
   position: absolute;
   z-index: -888;
   width: 150px;
@@ -136,7 +141,8 @@ export default {
   top: 100px;
   left: 40px;
 }
-.y3{
+
+.y3 {
   position: absolute;
   z-index: -900;
   width: 160px;
@@ -147,7 +153,8 @@ export default {
   top: 195px;
   left: 190px;
 }
-.y4{
+
+.y4 {
   position: absolute;
   z-index: -900;
   width: 220px;
@@ -158,7 +165,8 @@ export default {
 
   right: 0px;
 }
-.y5{
+
+.y5 {
   position: absolute;
   z-index: -900;
   width: 170px;
@@ -169,7 +177,8 @@ export default {
   top: 185px;
   right: 190px;
 }
-.y6{
+
+.y6 {
   position: absolute;
   z-index: -900;
   width: 120px;

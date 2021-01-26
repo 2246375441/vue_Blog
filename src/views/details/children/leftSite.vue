@@ -124,8 +124,10 @@ export default {
     newsHandleClick(ItemTop,uuid){
       document.documentElement.scrollTop = ItemTop - 100
       document.body.scrollTop = ItemTop - 100
+      const scrollHeight = document.documentElement.scrollTop ||document.body.scrollTop
       window.removeEventListener('scroll',this.scrollNews)
       this.activeNews = uuid
+      this.$bus.$emit('handleScrollBus',scrollHeight)
       setTimeout(()=>{
         window.addEventListener('scroll',this.scrollNews)
       },500)
