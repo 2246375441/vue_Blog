@@ -10,10 +10,7 @@
         <!-- 文章目录 -->
         <div v-show="contentIS===0" class="content_text">
           <ul>
-            <li class="active">第一行</li>
-            <li>第二行</li>
-            <li>第三行</li>
-            <li>第四行</li>
+            <li v-for="item in newsData" :key="item.uuid" :class="{active:item.uuid===activeNews}" @click="newsHandleClick(item.ItemTop,item.uuid)">{{ item.title }}</li>
           </ul>
         </div>
 
@@ -36,7 +33,7 @@
           </div>
         </div>
 
-        
+
         <!-- 站点功能区域 -->
         <div class="content_right" v-show="contentIS===2">
           <el-scrollbar style="height:100%;">
@@ -67,8 +64,29 @@ export default {
   data(){
     return {
       pcIS:true,
-      contentIS:0
+      contentIS:0,
+      // 文章目录对应数据
+      newsData:[],
+      //页面可视高度
+      winHeight:0,
+      //获得滚动+可视高度
+      winTop:0,
+      activeNews:''
     }
+  },
+  mounted() {
+    // 获取文章对应h1数据
+    this.$bus.$on('newsContentData',(data)=>{
+      this.newsData = data
+    })
+    // 获取页面可视高度
+     this.winHeight = document.body.clientHeight;
+    // 给页面添加滚动监听事件
+     window.addEventListener('scroll',this.scrollNews)
+  },
+  destroyed() {
+  //  解绑事件
+    window.removeEventListener('scroll',this.scrollNews)
   },
   methods: {
     // 站点概览点击事件
@@ -94,6 +112,23 @@ export default {
         $navs.eq(2).addClass('nav_xz')
       }
       this.contentIS = index
+    },
+    // 监听页面滚动
+    scrollNews(){
+      //获取滚动高度
+      let top1 = document.documentElement.scrollTop || document.body.scrollTop
+      //获得滚动+可视高度
+      this.winTop = this.winHeight + top1
+    },
+    // 文章目录点击跳转
+    newsHandleClick(ItemTop,uuid){
+      document.documentElement.scrollTop = ItemTop - 100
+      document.body.scrollTop = ItemTop - 100
+      window.removeEventListener('scroll',this.scrollNews)
+      this.activeNews = uuid
+      setTimeout(()=>{
+        window.addEventListener('scroll',this.scrollNews)
+      },500)
     }
   },
   computed: {
@@ -106,8 +141,28 @@ export default {
         }
       })
       return this.pcIS
+    },
+    isActive(){
+      let ls = ''
+      for (let i = 0; i < this.newsData.length; i++) {
+        if (this.winTop > this.newsData[i].ItemTop){
+          ls = this.newsData[i].uuid
+        }
+      }
+      return ls
     }
   },
+  watch:{
+    winTop(){
+      let ls = ''
+      for (let i = 0; i < this.newsData.length; i++) {
+        if (this.winTop > this.newsData[i].ItemTop){
+          ls = this.newsData[i].uuid
+        }
+      }
+      this.activeNews = ls
+    }
+  }
 }
 </script>
 
@@ -340,6 +395,7 @@ a{
   margin-top: 20px;
   margin-left: 5px;
   font-size: 20px;
+  cursor: pointer;
 }
 .active{
   color: #5f73e4;
